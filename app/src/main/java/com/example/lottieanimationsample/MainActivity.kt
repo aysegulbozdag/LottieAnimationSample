@@ -4,14 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
@@ -25,14 +18,15 @@ class MainActivity : ComponentActivity() {
         setContent {
             LottieAnimationsampleTheme {
                 val composition by rememberLottieComposition(
-                    spec = LottieCompositionSpec.RawRes(R.raw.animation_breathe)
+                    spec = LottieCompositionSpec.Url("https://lottie.host/1be691b8-8dbe-47c0-b350-d679fc75d7c7/yGBzDnoH90.json")
+                    //spec = LottieCompositionSpec.RawRes(R.raw.animation_breathe)
                 )
 
                 LottieAnimation(
                     composition = composition,
                     iterations = LottieConstants.IterateForever,
 
-                )
+                    )
             }
         }
     }
